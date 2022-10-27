@@ -5,7 +5,7 @@ module counter #(
     input  logic              clk,
     input  logic              rst,
     input  logic              en,
-    output logic              count
+    output logic[(WIDTH-1):0] count
 );
 
 always_ff @(posedge clk) begin

@@ -21,7 +21,7 @@ counter addr_counter(
 
 rom sine_table(
     .clk(clk),
-    .addr(addr),
+    .addr(rom_addr),
     .dout(dout)
 );
 
