@@ -1,12 +1,15 @@
-import math
-import string
-f = open("sinerom.mem","w")
-for i in range(256):
-    v = int(math.cos(2*3.1416*i/256)*127+127)
-    if (i+1)%16 == 0:
-        s = "{hex:2X}\n"
-    else:
-        s = "{hex:2X} "
-    f.write(s.format(hex=v))
+#!/usr/bin/python3
 
-f.close()
+import math
+
+with open("sinerom.mem", "w") as outfile:
+    for i in range(256):
+        val = int(math.cos(2 * math.pi * i / 256) * 127.5 + 127.5)
+        
+        str = f"{val:2X}"
+        if (i + 1) % 16 == 0:
+            str += "\n"
+        else:
+            str += " "
+
+        outfile.write(str)
