@@ -1025,7 +1025,7 @@ int vbdOpen() {
   // read port name from vbuddy.cfg
   FILE* input_file = fopen("vbuddy.cfg", "r");
     if (input_file == nullptr) 
-        perror("Cannot find vbuddy.cfg\n");
+        perror("Cannot find vbuddy.cfg");
     else {
         fgets(port_name, 80, input_file);
     }  
@@ -1035,9 +1035,9 @@ int vbdOpen() {
   port_name[strlen(port_name)-1] = '\0';   // strip '\n'
   char errorOpening = serial.openDevice(port_name, 115200);
   if (errorOpening!=1) 
-    printf ("\n** Error opening port: %s\n", port_name);
+    printf ("** Error opening port: %s\n", port_name);
   else {
-    printf ("\n ** Connected to Vbuddy via: %s\n", port_name);
+    printf ("** Connected to Vbuddy via: %s\n", port_name);
     // clear Vbuddy screen
     serial.flushReceiver();
     vbdClear();
