@@ -30,7 +30,7 @@ Clone to your local disk this repo.
 
 **Step 1 - Specifying a 256 x 8 bit ROM**
 
-Open in VS Code the folder for this repo. In the folder **_task1_**,   create the component **__rom.sv__** according to Lecture 4 slide 14.
+Open in VS Code the folder for this repo. In the folder **_task1_**,   create the component **__rom.sv__** according to Lecture 4 slide 20.
 
 <p align="center"> <img src="images/rom.jpg" /> </p>
 
