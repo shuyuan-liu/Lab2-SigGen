@@ -22,7 +22,8 @@ int main(int argc, char* argv[])
     vbdHeader("Lab 2: SineGen");
 
     top->clk = 0;
-    top->step_size = 0x01;
+    top->step_size = 0x03;
+    top->offset = 64;
     for (int cycle = 0; cycle < 1000; cycle++) {
         top->rst = (cycle <= 1);
         top->en = (cycle >= 3);
@@ -33,7 +34,8 @@ int main(int argc, char* argv[])
             top->clk = !top->clk;
         }
 
-        vbdPlot(top->dout, 0, 255);
+        vbdPlot(top->dout1, 0, 255);
+        vbdPlot(top->dout2, 0, 255);
         vbdCycle(cycle + 1);
 
         if (Verilated::gotFinish() || vbdGetkey() == 'q') {
