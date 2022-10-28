@@ -22,11 +22,11 @@ int main(int argc, char* argv[])
     vbdHeader("Lab 2: SineGen");
 
     top->clk = 0;
-    top->step_size = 0x03;
-    top->offset = 64;
+    top->step_size = 0x02;
     for (int cycle = 0; cycle < 1000; cycle++) {
         top->rst = (cycle <= 1);
         top->en = (cycle >= 3);
+        top->offset = vbdValue();
 
         for (int i = 0; i < 2; i++) {
             top->eval();
